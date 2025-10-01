@@ -13,10 +13,18 @@ interface SplitMap {
   [key: string]: SplitText;
 }
 
+interface SplitTextConfig {
+  type: "chars" | "lines" | "words" | "lines chars" | "lines words" | "words chars";
+  mask?: "chars" | "lines" | "words"; // alleen chars, lines of words
+  charsClass?: string;
+  lineClass?: string;
+  wordsClass?: string;
+}
+
+
 const HeroSection: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const imgRef = useRef<HTMLImageElement | null>(null);
-  const [splits, setSplits] = useState<Record<string, any>>({});
 
   /**
    * ============== GSAP Scroll Animation ==============
@@ -87,7 +95,12 @@ const HeroSection: React.FC = () => {
     const splitMap: SplitMap = {};
 
     elements.forEach(({ key, selector, type }) => {
-      const config: any = { type, mask: type };
+      // mask = "chars" of "lines" afhankelijk van type
+      const config: SplitTextConfig = { 
+        type, 
+        mask: type // nu accepteert TypeScript dit correct
+      };
+
       if (type === "chars") config.charsClass = "chars";
       if (type === "lines") config.lineClass = "line";
 
@@ -96,6 +109,9 @@ const HeroSection: React.FC = () => {
 
     return splitMap;
   };
+
+
+
 
   /**
    * Animate progressbar in random stappen
@@ -134,7 +150,6 @@ const HeroSection: React.FC = () => {
       ];
 
       const newSplits = createSplitTexts(splitElements);
-      setSplits(newSplits);
 
       // === 2. Initial states ===
       gsap.set(newSplits.logoChars.chars, { x: "100%" });

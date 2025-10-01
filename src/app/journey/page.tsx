@@ -5,7 +5,7 @@ import React from 'react';
 const Journey = () => {
   return (
     <div>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <Steps />
       <h1>Journey</h1>
     </div>

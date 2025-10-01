@@ -17,7 +17,7 @@ h1 {
 }
 
 p,
-a {
+.link {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 0.8rem;
@@ -72,7 +72,7 @@ nav p {
     gap: 3rem;
 }
 
-.menu-top-nav .top-links a {
+.menu-top-nav .top-links .link {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 0.9rem;
@@ -81,7 +81,7 @@ nav p {
     cursor: pointer;
 }
 
-.dark .menu-top-nav .top-links a {
+.dark .menu-top-nav .top-links .link {
     color: var(--color-text-dark);
 }
 
@@ -103,7 +103,7 @@ nav p {
 }
 
 /* Hover underline */
-.menu-top-nav .top-links a::after {
+.menu-top-nav .top-links .link::after {
     content: "";
     position: absolute;
     left: 0;
@@ -114,7 +114,7 @@ nav p {
     transition: width 0.3s ease;
 }
 
-.menu-top-nav .top-links a:hover::after {
+.menu-top-nav .top-links .link:hover::after {
     width: 100%;
 }
 
@@ -197,7 +197,7 @@ nav p {
     cursor: hidden;
 }
 
-.menu-link a {
+.menu-link .link {
     position: relative;
     color: var(--color-text);
     font-size: 10rem;
@@ -207,18 +207,18 @@ nav p {
     overflow: hidden;
 }
 
-.dark .menu-link a {
+.dark .menu-link .link {
     color: var(--color-text-dark);
 }
 
-.menu-link a span:nth-child(2) {
+.menu-link .link span:nth-child(2) {
     position: absolute;
     top: 0;
     left: 0;
 }
 
 
-/* Link highlighter bar */
+/* .link highlighter bar */
 .link-highlighter {
     position: absolute;
     bottom: 0;
@@ -260,7 +260,7 @@ nav p {
         gap: 0;
     }
 
-    .menu-link a {
+    .menu-link .link {
         font-size: 4rem;
         letter-spacing: 0;
     }

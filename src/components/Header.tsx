@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { FiMenu, FiX } from "react-icons/fi";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,6 +34,15 @@ export default function Header() {
 
 
   useEffect(() => {
+
+    // Sluit menu bij klikken op big links of top nav links
+    const allLinks = document.querySelectorAll<HTMLAnchorElement>(".menu-link .link, .menu-top-nav .link");
+    allLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        if (isMenuOpen) toggleMenu();
+      });
+    });
+
 
 
     // ================ Elementen selecteren ================
@@ -64,7 +74,7 @@ export default function Header() {
     let isMenuAnimating = false;
 
     // ================ Initialisaties ================
-    const menuLinks = document.querySelectorAll<HTMLAnchorElement>(".menu-link a");
+    const menuLinks = document.querySelectorAll<HTMLAnchorElement>(".menu-link .link");
 
     gsap.set(menuOverlay, { opacity: 0 });
     gsap.set(menuContent, { y: "50%", opacity: 0 });
@@ -74,7 +84,7 @@ export default function Header() {
     gsap.set(menuTopNav, { y: "-50%", opacity: 1 });
 
     // Default highlighter position
-    const defaultLinkText = document.querySelector<HTMLSpanElement>(".menu-link:first-child a span");
+    const defaultLinkText = document.querySelector<HTMLSpanElement>(".menu-link:first-child .link span");
     if (defaultLinkText) {
       const linkWidth = defaultLinkText.offsetWidth;
       linkHighlighter.style.width = linkWidth + "px";
@@ -115,9 +125,9 @@ export default function Header() {
           { y: "0%", opacity: 1, duration: 1, stagger: 0.05, ease: "power3.out" }
         );
 
-        gsap.from(".menu-link a span", { y: 50, opacity: 0, stagger: 0.1, ease: "back.out(1.7)" });
+        gsap.from(".menu-link .link span", { y: 50, opacity: 0, stagger: 0.1, ease: "back.out(1.7)" });
 
-        gsap.fromTo(".menu-top-nav .top-links a", 
+        gsap.fromTo(".menu-top-nav .top-links .link", 
           { y: -20, opacity: 0 }, 
           { y: 0, opacity: 1, duration: 0.6, stagger: 0.1, delay: 0.5, ease: "power3.out" }
         );
@@ -165,7 +175,7 @@ export default function Header() {
         if (window.innerWidth < 1000) return;
         if (!isMenuOpen) return;
 
-        const linkCopy = link.querySelectorAll("a span");
+        const linkCopy = link.querySelectorAll(".link span");
         const visibleCopy = linkCopy[0];
         const animatedCopy = linkCopy[1];
 
@@ -180,7 +190,7 @@ export default function Header() {
         if (window.innerWidth < 1000) return;
         if (!isMenuOpen) return;
 
-        const linkCopy = link.querySelectorAll("a span");
+        const linkCopy = link.querySelectorAll(".link span");
         const visibleCopy = linkCopy[0];
         const animatedCopy = linkCopy[1];
 
@@ -228,7 +238,7 @@ export default function Header() {
 
         targetHighlighterX = linkRect.left - menuWrapperRect.left;
 
-        const linkCopyElement = link.querySelector("a span");
+        const linkCopyElement = link.querySelector(".link span");
         targetHighlighterWidth = linkCopyElement ? (linkCopyElement as HTMLElement).offsetWidth : link.offsetWidth;
       });
     });
@@ -236,7 +246,7 @@ export default function Header() {
     menuLinksWrapper.addEventListener("mouseleave", () => {
       if (isMenuOpen === false) return;
       const defaultLinkText = document.querySelector<HTMLDivElement>(".menu-link:first-child");
-      const defaultLinkTextSpan = defaultLinkText?.querySelector<HTMLSpanElement>("a span");
+      const defaultLinkTextSpan = defaultLinkText?.querySelector<HTMLSpanElement>(".link span");
       if (!defaultLinkText || !defaultLinkTextSpan) return;
 
       const linkRect = defaultLinkText.getBoundingClientRect();
@@ -309,9 +319,9 @@ export default function Header() {
             <p>+32 478 08 80 82</p>
           </div>
           <div className="menu-col">
-            <p><a href="https://www.facebook.com/wannes.persyn.1">Facebook</a></p>
-            <p><a href="https://www.linkedin.com/in/wannes-persyn/">LinkedIn</a></p>
-            <p><a href="https://github.com/wannespersyn">GitHub</a></p>
+            <p><Link className="link" href="https://www.facebook.com/wannes.persyn.1">Facebook</Link></p>
+            <p><Link className="link" href="https://www.linkedin.com/in/wannes-persyn/">LinkedIn</Link></p>
+            <p><Link className="link" href="https://github.com/wannespersyn">GitHub</Link></p>
             <br />
             <br />
             <p>Language</p>
@@ -333,37 +343,37 @@ export default function Header() {
         {/* ============ BIG LINKS ============ */}
         <div className="menu-links-wrapper">
           <div className="menu-link">
-            <a href="/">
+            <Link className="link" href="/">
               <span>Home | </span>
               <span>Home |</span>
-            </a>
+            </Link>
           </div>
           <div className="menu-link">
-            <a href="/journey">
+            <Link className="link" href="/journey">
               <span>Journey | </span>
               <span>Journey | </span>
-            </a>
+            </Link>
           </div>
 
           <div className="menu-link">
-            <a href="/showcase">
+            <Link className="link" href="/showcase">
               <span>Showcase | </span>
               <span>Showcase | </span>
-            </a>
+            </Link>
           </div>
 
           <div className="menu-link">
-            <a href="/playground">
+            <Link className="link" href="/playground">
               <span>Playground | </span>
               <span>Playground | </span>
-            </a>
+            </Link>
           </div>
 
           <div className="menu-link">
-            <a href="/contact">
+            <Link className="link" href="/contact">
               <span>Contact</span>
               <span>Contact</span>
-            </a>
+            </Link>
           </div>
 
         {/* ============ LINK HIGHLIGHTER ============ */}
@@ -378,13 +388,13 @@ export default function Header() {
               const isActive = pathname.toLowerCase() === href;
 
               return (
-                <a
+                <Link
                   key={text}
                   href={href}
-                  className={`menu-link-top ${isActive ? "menu-active" : ""}`}
+                  className={`menu-link-top link ${isActive ? "menu-active" : ""}`}
                 >
                   {text.toUpperCase()}
-                </a>
+                </Link>
               );
             })}
           </div>

@@ -74,7 +74,7 @@ const ProjectsSection: React.FC = () => {
     });
   }, []);
 
-  const animateIn = (titleSplit: any, descSplit: any) => {
+  const animateIn = (titleSplit: SplitText, descSplit: SplitText) => {
     gsap.to(titleSplit.chars, {
       yPercent: 0,
       opacity: 1,
@@ -92,7 +92,7 @@ const ProjectsSection: React.FC = () => {
     });
   };
 
-  const animateOut = (titleSplit: any, descSplit: any) => {
+  const animateOut = (titleSplit: SplitText, descSplit: SplitText) => {
     gsap.to([titleSplit.chars, descSplit.words], {
       yPercent: -100,
       opacity: 0,
