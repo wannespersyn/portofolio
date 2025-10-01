@@ -1,0 +1,267 @@
+/* =========================================================
+   RESET & GLOBALS
+========================================================= */
+
+.header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 10rem;
+    font-weight: 500;
+    letter-spacing: -0.1rem;
+    line-height: 0.9;
+}
+
+p,
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    user-select: none;
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    color: var(--color-text);
+    display: flex;
+    justify-content: space-between;
+    mix-blend-mode: normal;
+    opacity: 1;
+    z-index: 1000;
+}
+
+.dark nav {
+    color: var(--color-text-dark);
+}
+
+nav p {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+/* =========================================================
+   TOP NAV LINKS
+========================================================= */
+.menu-top-nav {
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    z-index: 1010;
+    pointer-events: auto;
+}
+
+.menu-top-nav .top-links {
+
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.menu-top-nav .top-links a {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.dark .menu-top-nav .top-links a {
+    color: var(--color-text-dark);
+}
+
+.menu-link-top {
+    padding: 0.25rem 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.menu-link-top::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--color-accent);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+/* Hover underline */
+.menu-top-nav .top-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--color-accent);
+    transition: width 0.3s ease;
+}
+
+.menu-top-nav .top-links a:hover::after {
+    width: 100%;
+}
+
+.menu-active::after {
+    width: 100%;
+}
+
+/* =========================================================
+   MENU OVERLAY
+========================================================= */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+    background-color: var(--color-primary);
+    color: var(--color-text);
+    z-index: 500;
+    will-change: clip-path;
+    pointer-events: auto;
+    clip-path: polygon(0 100% 100% 100%, 100% 100%, 0 100%);
+}
+
+.dark .menu-overlay {
+    background-color: var(--color-primary-dark);
+    color: var(--color-text-dark);
+}
+
+/* =========================================================
+   MENU CONTENT
+========================================================= */
+.menu-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    padding: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    will-change: transform, opacity;
+}
+
+.menu-col:nth-child(2) {
+    text-align: right;
+}
+
+/* =========================================================
+   MENU IMAGE
+========================================================= */
+.menu-img {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    will-change: transform, opacity;
+}
+
+/* =========================================================
+   MENU LINKS
+========================================================= */
+.menu-links-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: max-content;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    will-change: transform;
+}
+
+.menu-link {
+    position: relative;
+    will-change: transform;
+    cursor: hidden;
+}
+
+.menu-link a {
+    position: relative;
+    color: var(--color-text);
+    font-size: 10rem;
+    font-weight: 500;
+    letter-spacing: -0.02rem;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.dark .menu-link a {
+    color: var(--color-text-dark);
+}
+
+.menu-link a span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* Link highlighter bar */
+.link-highlighter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 0.75rem;
+    background-color: var(--color-accent);
+    will-change: transform, width;
+}
+
+/* =========================================================
+   CHAR ANIMATION
+========================================================= */
+.char {
+    position: relative;
+    display: inline-block;
+    will-change: transform;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1000px) {
+    .hero h1 {
+        width: 100%;
+        font-size: 4rem;
+    }
+
+    .menu-content {
+        top: 25%;
+    }
+
+    .menu-img, .link-highlighter {
+        display: none;
+    }
+
+    .menu-link-wrapper {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-link a {
+        font-size: 4rem;
+        letter-spacing: 0;
+    }
+}

@@ -1,0 +1,380 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Algemene image styling */
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Container helper */
+.container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+/* Dark mode voor Hero */
+.dark .hero {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-dark);
+}
+
+.hero-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 4rem;
+  overflow: hidden;
+  transform-origin: center center;
+  text-align: center;
+}
+
+/* Achtergrond image van Hero */
+.hero-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.5); /* start iets ingezoomd */
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Tekst-content bovenop Hero */
+.hero-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  color: var(--color-text);
+  z-index: 2;
+}
+
+.dark .hero-content {
+  color: var(--color-text-dark);
+}
+
+/* Hero header */
+.header h1 {
+  font-size: 12rem;
+  font-weight: 500;
+  letter-spacing: -0.25rem;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+/* Footer tekst in Hero */
+.hero-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-footer p {
+  width: 25%;
+  opacity: 1;
+  text-align: right;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(5);
+  font-size: 12rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+
+  /* hier de "image fill text" */
+  background: url('/TheBeginning/heroSection.png') no-repeat center/cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+
+.about h2 {
+  margin: 0;
+  font-weight: 800;
+  font-size: clamp(6rem, 18vw, 18rem);
+  line-height: 0.9;
+  background: url('/TheBeginning/heroSection.png') no-repeat center/cover;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform:scaleY(2);
+}
+
+
+.dark .about {
+  color: var(--color-primary);
+}
+
+.dark .about h2 {
+  color: transparent;
+}
+
+
+/* ================= BUTTONS ================= */
+.contact-btn {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.menu-btn {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  transform: translateX(-50%);
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.25rem 0.25rem 0.25rem 1.5rem;
+  border-radius: 4rem;
+  background-color: var(--color-accent);
+  color: var(--color-primary);
+  will-change: transform;
+}
+
+.dark .btn {
+  background-color: var(--color-accent-dark);
+  color: var(--color-primary-dark);
+}
+
+.btn-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 100%;
+}
+
+.dark .btn-icon {
+  background-color: var(--color-primary-dark);
+  color: var(--color-accent-dark);
+}
+
+.btn-label span {
+  font-size: 0.9rem;
+  font-weight: 450;
+  line-height: 1;
+}
+
+/* ================= PRELOADER ================= */
+.preloader-progress,
+.preloader-mask,
+.preloader-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100svh;
+  pointer-events: none;
+}
+
+.preloader-progress {
+  z-index: 1000;
+  background-color: var(--color-secondary);
+  will-change: opacity;
+}
+
+.dark .preloader-progress {
+  background-color: var(--color-secondary-dark);
+}
+
+.preloader-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 55%;
+  height: 100%;
+  background-color: var(--accent);
+  transform-origin: left;
+  will-change: transform;
+  z-index: 1001;
+}
+
+.dark .preloader-progress-bar {
+  background-color: var(--color-accent-dark);
+}
+
+.preloader-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  mix-blend-mode: difference;
+  z-index: 1002;
+}
+
+.preloader-logo h1 {
+  position: relative;
+  color: var(--color-text);
+  font-size: 3rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.dark .preloader-logo h1 {
+  color: var(--color-text-dark);
+}
+
+.preloader-mask {
+  background-color: var(--color-primary);
+  mask: linear-gradient(var(--color-secondary), var(--color-secondary)),
+    url('/TheBeginning/mask.png') no-repeat center/50%;
+  mask-composite: subtract;
+  will-change: transform;
+  z-index: 1001;
+}
+
+.dark .preloader-mask {
+  background-color: var(--color-primary-dark);
+  mask: linear-gradient(var(--color-secondary-dark), var(--color-secondary-dark)),
+    url('/TheBeginning/mask.png') no-repeat center/50%;
+  mask-composite: subtract;
+}
+
+.preloader-content {
+  z-index: 1002;
+}
+
+.preloader-footer {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  text-align: center;
+}
+
+.preloader-footer p {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.dark .preloader-footer p {
+  color: var(--color-text-dark);
+  opacity: 0.8;
+}
+
+/* Tekst-splits animatie helpers */
+.line,
+.char {
+  position: relative;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+  will-change: transform;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 800px) {
+  .hero-inner {
+    border-radius: 3rem;
+  }
+
+  .header h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: 4rem;
+    letter-spacing: 0;
+  }
+
+  .hero-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .hero-footer h3,
+  .hero-footer p {
+    width: 100%;
+    text-align: left;
+  }
+
+  .hero-footer h3 {
+    font-size: 1.25rem;
+  }
+
+  .menu-btn {
+    top: 2rem;
+    left: 2rem;
+    transform: translateX(0%);
+  }
+
+  .preloader-progress-bar {
+    left: 0;
+    width: 100%;
+    transform: translateX(0) scaleX(0);
+  }
+
+  .preloader-logo h1 {
+    font-size: 2rem;
+  }
+
+  .preloader-mask {
+    mask: linear-gradient(var(--color-secondary), var(--color-secondary)),
+      url('/TheBeginning/mask.png') no-repeat center/90%;
+    mask-composite: subtract;
+  }
+
+  .dark .preloader-mask {
+    mask: linear-gradient(var(--color-secondary-dark), var(--color-secondary-dark)),
+      url('/TheBeginning/mask.png') no-repeat center/90%;
+    mask-composite: subtract;
+  }
+
+  .preloader-footer {
+    width: 75%;
+  }
+}

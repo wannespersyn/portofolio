@@ -1,0 +1,140 @@
+
+#wrapper {
+  background-color: var(--color-primary);
+}
+
+.dark #wrapper {
+  background-color: var(--color-primary-dark);
+}
+
+.scroll-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px;
+}
+
+.heading {
+  flex: 1 0 35%;
+}
+
+.heading h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 4.5vw, 3rem);
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-right: 90px;
+}
+
+
+.card {
+  height: 70%;
+  flex: 1 0 70%;
+  margin-right: 50px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+}
+
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+/* =======================
+    Timeline Styles
+======================= */
+.timeline {
+  position: absolute;
+  bottom: 20px;
+  left: 50px;
+  right: 50px;
+  height: 8px;
+  background-color: var(--color-secondary); /* de basislijn */
+  border-radius: 4px;
+}
+
+.timeline-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%; /* groeit via gsap */
+  background-color: var(--color-accent);
+  border-radius: 4px;
+  z-index: 1; /* boven basislijn */
+}
+
+.timeline-step {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-accent);
+  z-index: 2; /* boven progress bar */
+}
+
+
+/* =======================
+    Responsive Styles
+======================= */
+@media (max-width: 620px) {
+  .cards-container {
+    padding: 0 35px;
+  }
+
+  .heading {
+    flex: 1 0 55%;
+  }
+
+  .heading h1 {
+    line-height: 1.8;
+    margin-right: 35px;
+  }
+
+  .card {
+    margin-right: 35px;
+  }
+
+  .card:last-child {
+    object-position: 30% 50%;
+  }
+
+}
+
+@media (max-width: 435px) {
+  .cards-container {
+    padding: 0 25px;
+  }
+
+  .heading {
+    flex: 1 0 40%;
+  }
+
+  .heading h1 {
+    margin: 0 30px 0 10px;
+  }
+
+  .card {
+    margin-right: 20px;
+  }
+}
