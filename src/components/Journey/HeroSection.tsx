@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { gsap, SplitText } from "@/app/animations/gsapSetup";
+import React, { useLayoutEffect, useRef } from "react";
+import { gsap, SplitText } from "@/animations/gsapSetup";
 import '../../css/journey/hero.css';
 interface SplitConfig {
   key: string;

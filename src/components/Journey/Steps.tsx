@@ -8,24 +8,15 @@ import '../../css/journey/steps.css';
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-const TimelineWithSteps: React.FC = () => {
+const TimelineWithProgress: React.FC = () => {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const cardsContainerRef = useRef<HTMLDivElement>(null);
   const timelineProgressRef = useRef<HTMLDivElement>(null);
 
-  // Array met alle card-afbeeldingen
-  const cardImages: string[] = [
-    "/TheBeginning/firstComputer.JPG",
-    "/TheBeginning/heroSection.png",
-    "/potential/Slovenie_bovenopberg.jpg",
-    "/potential/Slovenie_Koeien.JPG",
-  ];
-
   useLayoutEffect(() => {
     if (!wrapperRef.current || !contentRef.current || !cardsContainerRef.current) return;
 
-    // ScrollSmoother instellen
     const smoother = ScrollSmoother.create({
       wrapper: wrapperRef.current,
       content: contentRef.current,
@@ -34,7 +25,6 @@ const TimelineWithSteps: React.FC = () => {
       smoothTouch: 0.1,
     });
 
-    // Selecteer alle card elementen
     const cards = gsap.utils.toArray(".card") as HTMLElement[];
     const cardsContainer = cardsContainerRef.current;
 
@@ -42,17 +32,21 @@ const TimelineWithSteps: React.FC = () => {
 
     const totalScroll = cardsContainer.scrollWidth - window.innerWidth + 50;
 
-    // Horizontale scroll animatie
+    // Horizontale scroll + timeline progress
     const scrollTrack = gsap.to(cardsContainer, {
       x: -totalScroll,
       ease: "none",
-      duration: cards.length,
       scrollTrigger: {
         trigger: ".scroll-section",
         start: "top top",
         end: () => `+=${totalScroll}`,
         scrub: true,
         pin: true,
+        onUpdate: (self) => {
+          if (timelineProgressRef.current) {
+            timelineProgressRef.current.style.width = `${self.progress * 100}%`;
+          }
+        },
       },
     });
 
@@ -65,37 +59,6 @@ const TimelineWithSteps: React.FC = () => {
           start: "left 95%",
           end: "left 90%",
           scrub: true,
-          containerAnimation: scrollTrack,
-        },
-      });
-    });
-
-    // Timeline progress bar
-    if (timelineProgressRef.current) {
-      gsap.to(timelineProgressRef.current, {
-        width: "100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".scroll-section",
-          start: "top top",
-          end: () => `+=${totalScroll}`,
-          scrub: true,
-          containerAnimation: scrollTrack,
-        },
-      });
-    }
-
-    // Step indicators boven timeline
-    const steps = document.querySelectorAll<HTMLDivElement>(".timeline-step");
-    steps.forEach((step, i) => {
-      gsap.to(step, {
-        backgroundColor: "var(--color-accent)",
-        scrollTrigger: {
-          trigger: cards[i],
-          start: "left 50%",
-          end: "left 40%",
-          scrub: true,
-          containerAnimation: scrollTrack,
         },
       });
     });
@@ -112,56 +75,32 @@ const TimelineWithSteps: React.FC = () => {
         <div id="content" ref={contentRef}>
           <div className="scroll-section">
             <div className="cards-container" ref={cardsContainerRef}>
+              <div className="heading">
+                <h1>Stap 1: De Begin</h1>
+              </div>
 
-              {cardImages.map((src: string, index: number) => (
-                <div className="card" key={index}>
-                  <img src={src} alt={`Card ${index + 1}`} />
-                </div>
-              ))}
+              <div className="card">
+                <img src="/TheBeginning/firstComputer.JPG" alt="" />
+              </div>
+              <div className="card">
+                <img src="/TheBeginning/heroSection.png" alt="" />
+              </div>
+              <div className="card">
+                <img src="/potential/Slovenie_bovenopberg.jpg" alt="" />
+              </div>
+              <div className="card">
+                <img src="/potential/Slovenie_Koeien.JPG" alt="" />
+              </div>
             </div>
 
-            {/* Timeline met steps */}
-            <div
-              className="timeline"
-              style={{
-                position: "absolute",
-                bottom: "20px",
-                left: "50px",
-                right: "50px",
-                height: "8px",
-                display: "flex",
-                alignItems: "center",
-                gap: "10px",
-              }}
-            >
-              {cardImages.map((_: string, index: number) => (
+            {/* Timeline */}
+            <div className="timeline">
+              <div className="timeline-track">
                 <div
-                  key={index}
-                  className="timeline-step"
-                  style={{
-                    flex: 1,
-                    height: "12px",
-                    borderRadius: "6px",
-                    backgroundColor: "var(--color-secondary)",
-                  }}
+                  className="timeline-progress"
+                  ref={timelineProgressRef}
                 />
-              ))}
-
-              <div
-                className="timeline-progress"
-                ref={timelineProgressRef}
-                style={{
-                  position: "absolute",
-                  left: 0,
-                  top: 0,
-                  height: "100%",
-                  width: "0%",
-                  backgroundColor: "var(--color-accent-2)",
-                  borderRadius: "6px",
-                  pointerEvents: "none",
-                  zIndex: -1,
-                }}
-              />
+              </div>
             </div>
           </div>
         </div>
@@ -170,4 +109,4 @@ const TimelineWithSteps: React.FC = () => {
   );
 };
 
-export default TimelineWithSteps;
+export default TimelineWithProgress;

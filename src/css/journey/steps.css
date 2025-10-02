@@ -1,4 +1,6 @@
-
+/* =======================
+   Wrapper & Scroll Section
+======================= */
 #wrapper {
   background-color: var(--color-primary);
 }
@@ -10,16 +12,20 @@
 .scroll-section {
   position: relative;
   overflow: hidden;
+  height: 100vh;
 }
 
+/* =======================
+   Cards Layout
+======================= */
 .cards-container {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: flex-start;
   padding: 0 50px;
+  height: 100%;
+  width: 100%;
 }
 
 .heading {
@@ -35,18 +41,17 @@
   margin-right: 90px;
 }
 
-
 .card {
-  height: 70%;
   flex: 1 0 70%;
+  height: 70%;
   margin-right: 50px;
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   opacity: 0;
+  overflow: hidden;
 }
 
-.card-image {
-  display: block;
+.card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -58,7 +63,7 @@
 }
 
 /* =======================
-    Timeline Styles
+   Timeline Styles
 ======================= */
 .timeline {
   position: absolute;
@@ -66,36 +71,31 @@
   left: 50px;
   right: 50px;
   height: 8px;
-  background-color: var(--color-secondary); /* de basislijn */
+}
+
+.timeline-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
   border-radius: 4px;
+  background-color: var(--color-secondary);
+  overflow: hidden;
 }
 
 .timeline-progress {
   position: absolute;
   left: 0;
   top: 0;
+  width: 0%;
   height: 100%;
-  width: 0%; /* groeit via gsap */
-  background-color: var(--color-accent);
   border-radius: 4px;
-  z-index: 1; /* boven basislijn */
+  background-color: var(--color-accent);
+  pointer-events: none;
+  z-index: 10;
 }
-
-.timeline-step {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background-color: var(--color-secondary);
-  border: 2px solid var(--color-accent);
-  z-index: 2; /* boven progress bar */
-}
-
 
 /* =======================
-    Responsive Styles
+   Responsive Styles
 ======================= */
 @media (max-width: 620px) {
   .cards-container {
@@ -107,18 +107,13 @@
   }
 
   .heading h1 {
-    line-height: 1.8;
     margin-right: 35px;
+    line-height: 1.8;
   }
 
   .card {
     margin-right: 35px;
   }
-
-  .card:last-child {
-    object-position: 30% 50%;
-  }
-
 }
 
 @media (max-width: 435px) {

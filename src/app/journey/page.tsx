@@ -7,7 +7,9 @@ const Journey = () => {
     <div>
       <HeroSection />
       <Steps />
-      <h1>Journey</h1>
+      <section className='min-h-screen flex items-center justify-center'>
+        <h2 className='text-2xl font-bold'>UNDER CONSTRUCTION</h2>
+      </section>
     </div>
   );
 };

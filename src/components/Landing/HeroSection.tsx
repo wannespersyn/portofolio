@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../../css/landing/hero.css";
-import { gsap } from "../../app/animations/gsapSetup";
+import { gsap } from "../../animations/gsapSetup";
 
 const HeroSection: React.FC = () => {
   const ROWS = 6;

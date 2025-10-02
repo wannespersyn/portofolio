@@ -1,7 +1,7 @@
 "use client";
 
 import "../css/header.css";
-import { gsap } from "@/app/animations/gsapSetup";
+import { gsap } from "@/animations/gsapSetup";
 import { useEffect, useState } from "react";
 import ThemeSwitch from "./ThemeSwitch";
 import { FiMenu, FiX } from "react-icons/fi";
