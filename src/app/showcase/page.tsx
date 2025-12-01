@@ -1,10 +1,10 @@
-import ProjectsSection from '@/components/projects/ProjectsSection'
+import HeroSection from '@/components/projects/HeroSection'
 import React from 'react'
 
 const ProjectsPage = () => {
   return (
     <main>
-      <ProjectsSection />
+      <HeroSection />
     </main>
   )
 }

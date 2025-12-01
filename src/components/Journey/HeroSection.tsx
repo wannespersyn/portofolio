@@ -15,7 +15,7 @@ interface SplitMap {
 
 interface SplitTextConfig {
   type: "chars" | "lines" | "words" | "lines chars" | "lines words" | "words chars";
-  mask?: "chars" | "lines" | "words"; // alleen chars, lines of words
+  mask?: "chars" | "lines" | "words"; 
   charsClass?: string;
   lineClass?: string;
   wordsClass?: string;
@@ -285,31 +285,32 @@ const HeroSection: React.FC = () => {
         </div>
       </section>
 
+      {/* Hero Journey's page & Scroll About */}
       <div ref={heroRef} className="hero-wrapper">
-      <section className="hero">
-        <div className="hero-inner">
-          <div className="hero-img">
-            <img ref={imgRef} className="img" src="/TheBeginning/heroSection.png" alt="" />
-          </div>
+        <section className="hero">
+          <div className="hero-inner">
+            <div className="hero-img">
+              <img ref={imgRef} className="img" src="/journey/heroSection.png" alt="" />
+            </div>
 
-          <div className="hero-content">
-            <div className="header">
-              <h1>
-                Behind <br />
-                The <br />
-                Code
-              </h1>
-            </div>
-            <div className="hero-footer">
-              <p>Thought this would be a two-line bio? Think again...</p>
+            <div className="hero-content">
+              <div className="header">
+                <h1>
+                  Behind <br />
+                  The <br />
+                  Code
+                </h1>
+              </div>
+              <div className="hero-footer">
+                <p>Thought this would be a two-line bio? Think again...</p>
+              </div>
             </div>
           </div>
+        </section>
+
+        <div className="about">
+          <h2>ABOUT</h2>
         </div>
-      </section>
-
-      <div className="about">
-        <h2>ABOUT</h2>
-      </div>
     </div>
     </>
   );

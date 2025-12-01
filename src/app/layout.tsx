@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "../css/landing/hero.css";
 import { ThemeProvider } from "next-themes";
 import Header from "@/components/Header";
 

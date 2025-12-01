@@ -1,4 +1,5 @@
-import './style.css';
+import "../../css/projects/hero.css";
+
 
 export const metadata = {
   title: "Projects - Wannes Persyn",

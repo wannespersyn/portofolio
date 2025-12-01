@@ -300,7 +300,7 @@ export default function Header() {
         <div className="nav-item"></div>
       </nav>
       
-      <div className="menu-overlay">        
+      <div className={`menu-overlay ${isMenuOpen ? "open" : ""}`}>        
 
         {/* Menu Content Left and Right of Image */}
         <div className="menu-content">

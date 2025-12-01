@@ -136,9 +136,14 @@ nav p {
     color: var(--color-text);
     z-index: 500;
     will-change: clip-path;
-    pointer-events: auto;
+    pointer-events: none;
     clip-path: polygon(0 100% 100% 100%, 100% 100%, 0 100%);
 }
+
+.menu-overlay.open {
+  pointer-events: auto;
+}
+
 
 .dark .menu-overlay {
     background-color: var(--color-primary-dark);

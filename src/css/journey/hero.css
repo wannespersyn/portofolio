@@ -56,14 +56,18 @@
 }
 
 /* Achtergrond image van Hero */
-.hero-img {
+.hero-content {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: scale(1.5); /* start iets ingezoomd */
-  will-change: transform;
-  z-index: 1;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  z-index: 2;
 }
+
 
 /* Tekst-content bovenop Hero */
 .hero-content {
@@ -120,7 +124,7 @@
   z-index: 3;
 
   /* hier de "image fill text" */
-  background: url('/TheBeginning/heroSection.png') no-repeat center/cover;
+  background: url('/journey/heroSection.png') no-repeat center/cover;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -132,7 +136,7 @@
   font-weight: 800;
   font-size: clamp(6rem, 18vw, 18rem);
   line-height: 0.9;
-  background: url('/TheBeginning/heroSection.png') no-repeat center/cover;
+  background: url('/journey/heroSection.png') no-repeat center/cover;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -268,7 +272,7 @@
 .preloader-mask {
   background-color: var(--color-primary);
   mask: linear-gradient(var(--color-secondary), var(--color-secondary)),
-    url('/TheBeginning/mask.png') no-repeat center/50%;
+    url('/journey/mask.png') no-repeat center/50%;
   mask-composite: subtract;
   will-change: transform;
   z-index: 1001;
@@ -277,7 +281,7 @@
 .dark .preloader-mask {
   background-color: var(--color-primary-dark);
   mask: linear-gradient(var(--color-secondary-dark), var(--color-secondary-dark)),
-    url('/TheBeginning/mask.png') no-repeat center/50%;
+    url('/journey/mask.png') no-repeat center/50%;
   mask-composite: subtract;
 }
 
@@ -364,13 +368,13 @@
 
   .preloader-mask {
     mask: linear-gradient(var(--color-secondary), var(--color-secondary)),
-      url('/TheBeginning/mask.png') no-repeat center/90%;
+      url('/journey/mask.png') no-repeat center/90%;
     mask-composite: subtract;
   }
 
   .dark .preloader-mask {
     mask: linear-gradient(var(--color-secondary-dark), var(--color-secondary-dark)),
-      url('/TheBeginning/mask.png') no-repeat center/90%;
+      url('/journey/mask.png') no-repeat center/90%;
     mask-composite: subtract;
   }
 
