@@ -1,4 +1,4 @@
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState } from "react";
 
 const TerminalCard = ({ data }: { data: { title: string; lines: string[] } }) => {
   const [open, setOpen] = useState(false);
@@ -34,7 +34,7 @@ const TerminalCard = ({ data }: { data: { title: string; lines: string[] } }) =>
     }, 10);
   };
 
-  const handleClose = (e: any) => {
+  const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     setOpen(false);
 

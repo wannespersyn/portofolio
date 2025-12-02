@@ -1,10 +1,8 @@
 "use client";
 import TerminalCard from "@/components/projects/TerminalCard";
-import { title } from "process";
 import React, { useEffect, useRef, useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-type ProjectInfo = {}
 
 const techSlides = [
   {

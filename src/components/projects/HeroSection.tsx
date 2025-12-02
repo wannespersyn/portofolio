@@ -17,7 +17,8 @@ const HeroSection = () => {
   ];
 
   useLayoutEffect(() => {
-    gsap.utils.toArray(".project-card").forEach((card: any, i: number) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    gsap.utils.toArray<HTMLElement>(".project-card").forEach((card, i) => {
       gsap.from(card, {
         opacity: 0.7,
         y: 50,
