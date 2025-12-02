@@ -5,7 +5,7 @@ import React from 'react';
 const Journey = () => {
   return (
     <div>
-      {/* <HeroSection /> */}
+      <HeroSection />
       <MyOrigins />
     </div>
   );

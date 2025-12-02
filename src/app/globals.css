@@ -26,11 +26,10 @@
   --font-special: 'MedievalSharp';
 }
 
-* {
-    margin: 0;
-    padding: 0;
+*, *::before, *::after {
     box-sizing: border-box;
 }
+
 
 body {
     background-color: var(--color-primary);

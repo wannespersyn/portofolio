@@ -82,7 +82,7 @@ export default function TimelineSection() {
           yearElsRef.current[i]?.classList.add("active");
           nodesRef.current[i]?.scrollIntoView({
             behavior: "smooth",
-            block: "center", // vertical center
+            block: "center",
           });
         },
         onEnterBack: () => {
@@ -134,7 +134,7 @@ export default function TimelineSection() {
       </aside>
 
       {/* Content Sections */}
-      <div className="content-sections"> {/* pl-56 = ruimte voor de sidebar */}
+      <div className="content-sections">
         {timeline.map((item, i) => (
           <div
             key={item.year}

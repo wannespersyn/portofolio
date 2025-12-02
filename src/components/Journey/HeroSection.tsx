@@ -286,7 +286,7 @@ const HeroSection: React.FC = () => {
       </section>
 
       {/* Hero Journey's page & Scroll About */}
-      <div ref={heroRef} className="hero-wrapper">
+      <div ref={heroRef} className="hero-wrapper z-31">
         <section className="hero">
           <div className="hero-inner">
             <div className="hero-img">

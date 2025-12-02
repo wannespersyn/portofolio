@@ -7,16 +7,16 @@
     height: 100%;
     object-fit: cover;
 }
-
+/* 
 h1 {
     text-transform: uppercase;
     font-size: 10rem;
     font-weight: 500;
     letter-spacing: -0.1rem;
     line-height: 0.9;
-}
+} */
 
-p,
+.menu-col p,
 .link {
     text-decoration: none;
     text-transform: uppercase;
@@ -247,10 +247,10 @@ nav p {
    RESPONSIVE
 ========================================================= */
 @media (max-width: 1000px) {
-    .hero h1 {
+    /* .hero h1 {
         width: 100%;
         font-size: 4rem;
-    }
+    } */
 
     .menu-content {
         top: 25%;

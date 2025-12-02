@@ -62,7 +62,7 @@ const HeroSection = () => {
               <img src={p.image} alt={p.title} />
             </div>
 
-            <div className="red-tint"></div>   {/* 🔴 nieuw */}
+            <div className="red-tint"></div>
 
             <div className="hover-overlay"></div>
 
@@ -78,7 +78,7 @@ const HeroSection = () => {
               <p className="project-category">{p.category}</p>
               <h3 className="project-title">{p.title}</h3>
               <p className="project-description">{p.smallDescription}</p>
-              <Link href={`/projects/${p.title.toLowerCase().replace(/\s+/g, '-')}`}>View Project</Link>
+              <Link className="project-link" href={`/showcase/projects/${p.title.toLowerCase().replaceAll(/\s+/g, '')}`}>View Project</Link>
             </div>
           </div>
         ))}
