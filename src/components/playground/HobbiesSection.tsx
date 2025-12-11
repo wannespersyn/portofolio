@@ -208,7 +208,7 @@ export default function StickyDynamicHero() {
             )}
             {activeIndex === 3 && (
               <>
-                <li className="text-lg font-alt">Joined father's cycling club</li>
+                <li className="text-lg font-alt">Joined father&apos;s cycling club</li>
                 <li className="text-lg font-alt">Road biking adventures</li>
                 <li className="text-lg font-alt">Occasional rides with friends & family</li>
               </>
