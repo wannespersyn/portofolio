@@ -290,15 +290,15 @@ const HeroSection: React.FC = () => {
         <section className="hero">
           <div className="hero-inner">
             <div className="hero-img">
-              <img ref={imgRef} className="img" src="/journey/heroSection.png" alt="" />
+              <img ref={imgRef} className="img" src="/journey/heroSection.webp" alt="The Journey That Shapes Me" />
             </div>
 
             <div className="hero-content">
               <div className="header">
                 <h1>
-                  Behind <br />
-                  The <br />
-                  Code
+                  The Journey <br />
+                  That <br />
+                  Shapes Me
                 </h1>
               </div>
               <div className="hero-footer">

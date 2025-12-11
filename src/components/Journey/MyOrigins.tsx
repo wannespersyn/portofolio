@@ -77,7 +77,7 @@ export default function TimelineSection() {
       ScrollTrigger.create({
         trigger: section,
         start: "top center",
-        end: "bottom center",
+        end: "bottom center-=0",
         onEnter: () => {
           yearElsRef.current[i]?.classList.add("active");
           nodesRef.current[i]?.scrollIntoView({

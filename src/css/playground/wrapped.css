@@ -1,0 +1,17 @@
+/* Perspective wrapper */
+.perspective {
+  perspective: 1000px;
+}
+
+/* Transform & 3D */
+.transform-style {
+  transform-style: preserve-3d;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Rotate Y helper */
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}

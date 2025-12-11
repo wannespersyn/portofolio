@@ -35,6 +35,7 @@
   width: 100%;
   max-width: 400px;
   cursor: pointer;
+  user-select: none;
 }
 
 /* IMAGE */
@@ -78,6 +79,8 @@
   font-size: 0.75rem;
   letter-spacing: 0.15rem;
   text-transform: uppercase;
+  z-index: 10;
+  user-select: none;
 }
 
 .initial-title {
@@ -85,12 +88,14 @@
   font-size: 1.6rem;
   font-weight: 500;
   text-shadow: 0 0 10px rgba(0,0,0,0.45);
+  user-select: none;
 }
 
 /* Hide initial info on hover */
 .hover-card:hover .initial-info {
   opacity: 0;
   transform: translateY(10px);
+  user-select: none;
 }
 
 /* FULL HOVER CONTENT */
@@ -145,6 +150,7 @@
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   transition: background-color 0.3s ease;
+  z-index: 999;
 }
 
 .hover-content .project-link {
@@ -152,6 +158,7 @@
   text-decoration: underline;
   margin-top: 1rem;
   font-size: 0.95rem;
+  z-index: 999;
 }
 
 /* RED OVERLAY (altijd zichtbaar tot hover) */

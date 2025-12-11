@@ -369,12 +369,12 @@ export default function Header() {
             </Link>
           </div>
 
-          <div className="menu-link">
+          {/* <div className="menu-link">
             <Link className="link" href="/contact">
               <span>Contact</span>
               <span>Contact</span>
             </Link>
-          </div>
+          </div> */}
 
         {/* ============ LINK HIGHLIGHTER ============ */}
         <div className="link-highlighter"></div>
@@ -383,7 +383,7 @@ export default function Header() {
         {/* ============ TOP NAVIGATION ============ */}
         <div className="menu-top-nav">
           <div className="top-links">
-            {["Home", "Journey", "Showcase", "Playground", "Contact"].map((text) => {
+            {["Home", "Journey", "Showcase", "Playground"].map((text) => {
               const href = `/${text === "Home" ? "" : text.toLowerCase()}`;
               const isActive = pathname.toLowerCase() === href;
 
