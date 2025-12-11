@@ -31,14 +31,14 @@ const spotlightItems: SpotlightItem[] = [
     title: "Indoor Soccer",
     image: "/playground/indoor_soccer.jpg",
     description:
-      "Since 2021, I have been playing indoor soccer with friends in the LZV Cup. We founded the team purely for fun and to stay active. In the 2024–2025 season, we achieved promotion. My statistics can be found here: https://www.lzvcup.be/player/16148",
+      `Since 2021, I have been playing indoor soccer with friends in the LZV Cup. We founded the team purely for fun and to stay active. In the 2024–2025 season, we achieved promotion. My statistics can be found here: https://www.lzvcup.be/player/16148`,
   },
   {
     id: 4,
-    title: "Wielrennen",
+    title: "Cycling",
     image: "/playground/cycling.webp",
     description:
-      "When I was about sixteen, I bought my first road bike and started cycling with my father. A bit later, I upgraded to a better bike and joined my father’s cycling club together with two friends. I cycled with the club for about a year, and nowadays I still go out for rides occasionally, either with friends or with my dad.",
+      "When I was about sixteen, I bought my first road bike and started cycling with my father. A bit later, I upgraded to a better bike and joined my fathers cycling club together with two friends. I cycled with the club for about a year, and nowadays I still go out for rides occasionally, either with friends or with my dad."
   },
   {
     id: 5,
@@ -57,7 +57,6 @@ export default function StickyDynamicHero() {
   const accentRef = useRef<HTMLDivElement>(null);
   const highlightRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const sectiontitleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
 
 
