@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(cp \"/Users/persynwannes/.claude/projects/-Users-persynwannes-Documents-Projects-portofolioV2/2d759143-a8b1-419c-975c-a4e823f98f64/tool-results/webfetch-1779716014655-ki1w65.bin\" /tmp/design.gz)",
+      "Bash(gunzip -f /tmp/design.gz)",
+      "Read(//tmp/**)",
+      "Bash(tar -tf /tmp/design)",
+      "Bash(tar -xf /tmp/design -C /tmp/)",
+      "Bash(cat /tmp/portofolio/chats/chat1.md)",
+      "Read(//private/tmp/portofolio/chats/**)",
+      "Bash(cat /tmp/portofolio/project/index.html)",
+      "Read(//private/tmp/portofolio/project/**)",
+      "Bash(cp /tmp/portofolio/project/index.html /Users/persynwannes/Documents/Projects/portofolioV2/index.html)",
+      "Bash(cp /tmp/portofolio/project/styles.css /Users/persynwannes/Documents/Projects/portofolioV2/styles.css)",
+      "Bash(cp /tmp/portofolio/project/app.jsx /Users/persynwannes/Documents/Projects/portofolioV2/app.jsx)",
+      "Bash(cp /tmp/portofolio/project/tweaks-panel.jsx /Users/persynwannes/Documents/Projects/portofolioV2/tweaks-panel.jsx)",
+      "Bash(cp /tmp/portofolio/project/image-slot.js /Users/persynwannes/Documents/Projects/portofolioV2/image-slot.js)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(npx vite *)"
+    ]
+  }
+}
