@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { useTweaks, TweaksPanel, TweakSection, TweakRadio, TweakColor, TweakSelect } from './TweaksPanel'
 
 // ── tweakable defaults — host can rewrite this JSON ────────────────────────
@@ -740,6 +741,7 @@ function App() {
       </main>
       <Footer />
       <Tweaks t={t} setTweak={setTweak} />
+      <Analytics />
     </>);
 
 }
