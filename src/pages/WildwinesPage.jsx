@@ -4,7 +4,7 @@ const config = {
   documentTitle: 'Wildwines',
   eyebrow: 'Case study — 002 / 02 · Shipped · 2025',
   title: 'Wildwines.',
-  subtitle: 'An e-commerce storefront for a Belgian wine merchant, with a dashboard she actually uses.',
+  subtitle: 'An e-commerce storefront for a Belgian wine merchant, with a dashboard he actually uses.',
   subtitleMaxWidth: '24ch',
   meta: [
     { k: 'Client',   v: 'Wildwines · BE' },
@@ -19,10 +19,10 @@ const config = {
       label: '01 — Brief',
       content: <>
         <p>
-          The owner sells <strong>natural wines</strong> from a small shop in Belgium. She wanted a site that <em>"feels like the shop, not like a webshop"</em> — warm, slow, opinionated — and a backend where she could run the whole catalogue without ever texting me.
+          The owner sells <strong>natural wines</strong> from a small shop in Belgium. He wanted a site that <em>"feels like the shop, not like a webshop"</em> — warm, slow, opinionated — and a backend where he could run the whole catalogue without ever texting me.
         </p>
         <p>
-          The unspoken rule: <span className="em">she edits, I don't.</span> If a product needs changing at 11pm on a Sunday, that's her job, not mine. A win is a deploy I never have to do.
+          The unspoken rule: <span className="em">he edits, I don't.</span> If a product needs changing at 11pm on a Sunday, that's his job, not mine. A win is a deploy I never have to do.
         </p>
       </>,
     },
@@ -32,8 +32,8 @@ const config = {
         <li>Storefront — wines, tastings, food pairings, editorial pages. Designed to read more like a magazine than a Shopify clone.</li>
         <li>Cart + checkout — Stripe-backed, with pickup-in-shop and ship-to-home, VAT handled properly because Belgium is fussy.</li>
         <li>Admin dashboard — full CRUD over wines, stock, events, pages, images. Inline editing, drag-to-reorder, autosave.</li>
-        <li>Tastings & pairings — a small CMS for editorial content, where she writes once and it shows up in three places without copy-paste.</li>
-        <li>Reporting — monthly revenue, top wines, low-stock alerts, exported to CSV for her accountant.</li>
+        <li>Tastings & pairings — a small CMS for editorial content, where he writes once and it shows up in three places without copy-paste.</li>
+        <li>Reporting — monthly revenue, top wines, low-stock alerts, exported to CSV for his accountant.</li>
       </ul>,
     },
     {

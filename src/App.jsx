@@ -98,7 +98,7 @@ function HeroPoster() {
         </div>
         <div className="hp-row hp-mid">
           <div className="hp-side hp-side-l">
-            <span className="hp-num">№ 26 — Last-year student</span>
+            <span className="hp-num">№ 26 — Recent Graduate</span>
             <span className="hp-it">Junior dev,</span>
             <span className="hp-strong">no shortcuts.</span>
           </div>
@@ -404,8 +404,7 @@ function About() {
           <h2>Wannes, on Wannes.<br />Brief, honest, italicised.</h2>
         </div>
         <p className="lede">
-          A final-year student who taught himself to ship by, well, shipping.
-          Two years of nights, weekends, real clients, real bugs, real deploys.
+          A recent graduate who taught himself to ship by, well, shipping
         </p>
       </div>
 
@@ -425,18 +424,18 @@ function About() {
 
         <div className="about-body reveal">
           <p>
-            I'm <strong>Wannes</strong> — last-year full-stack student, <span className="em">two years</span> of building things people actually use. I prefer <span className="em">small details done well</span> over big systems half-finished.
+            I'm <strong>Wannes</strong>, a recent full-stack graduate,  <span className="em">two years</span> of building things people actually use. I prefer <span className="em">small details done well</span> over big systems half-finished.
           </p>
           <p>
             My rule: if the client can't change it without me, I haven't finished. Hence dashboards, well-typed APIs, and a deep suspicion of <span className="em">"just hardcode it for now"</span>.
           </p>
           <p>
-            I treat junior like a posture, not a ceiling — ask questions, ship daily, read the PR comments twice. The senior part comes later. The taste is non-negotiable.
+            I treat junior like a posture, not a ceiling, ask questions, ship daily, read the PR comments twice. The senior part comes later. The taste is non-negotiable.
           </p>
 
           <div className="stats">
             <div className="stat reveal">
-              <Counter value="2" suffix="y" />
+              <Counter value="3" suffix="y" />
               <div className="lbl">Years building</div>
             </div>
             <div className="stat reveal">
