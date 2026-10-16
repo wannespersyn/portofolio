@@ -18,7 +18,12 @@
       "Bash(cp /tmp/portofolio/project/image-slot.js /Users/persynwannes/Documents/Projects/portofolioV2/image-slot.js)",
       "Bash(npm install *)",
       "Bash(npm run *)",
-      "Bash(npx vite *)"
+      "Bash(npx vite *)",
+      "Bash(git fetch *)",
+      "Bash(git restore *)",
+      "Bash(git rebase *)",
+      "Bash(git stash *)",
+      "Bash(git push *)"
     ]
   }
 }

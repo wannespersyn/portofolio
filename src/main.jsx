@@ -1,18 +1,15 @@
-import './image-slot.js'
-import './styles.css'
-import './case-study.css'
+import './site/site.css'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import App from './App'
-import DeflosjPage from './pages/DeflosjPage'
-import WildwinesPage from './pages/WildwinesPage'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import Home from './site/Home'
+import CasePage from './site/CasePage'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/work/deflosj" element={<DeflosjPage />} />
-      <Route path="/work/wildwines" element={<WildwinesPage />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/work/:slug" element={<CasePage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   </BrowserRouter>
 )

@@ -1,0 +1,151 @@
+// Content for the portfolio. Edit text here; the pages render from this file.
+
+export const PROFILE = {
+  name: 'Wannes Persyn',
+  place: 'Rotselaar',
+  status: 'Op zoek naar een job als developer',
+  email: 'wannes.persyn@gmail.com',
+  linkedin: 'https://www.linkedin.com/in/wannes-persyn/',
+  github: 'https://github.com/wannespersyn',
+  cv: '/CV_Wannes_Persyn.pdf',
+  photo: '/images/profile.jpeg',
+  stack: ['Next.js', 'React', 'TypeScript', 'Node.js', 'Supabase', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
+}
+
+// Each case: `moment` picks the animated mock in Moments.jsx.
+// Optional fields (status, live, resultaat, still images) are left out when null.
+export const CASES = [
+    {
+    slug: 'wildwines',
+    moment: 'order',
+    num: '01',
+    app: 'WildWines',
+    title: 'WildWines & Decades',
+    momentTitle: 'Bestellen',
+    year: '2023–26',
+    icon: 'WW',
+    color: '#c39e53',
+    tint: '#F5EFE3',
+    meta: 'ConnectNow · 2023 — nu',
+    line: 'Een e-commerceplatform voor wijn, met een volledige beheeromgeving, gebouwd bij ConnectNow.',
+    lightbox: 'Een webshop waar je wijnen koopt, proeverijen aanvraagt en ontdekt wat je bij je eten schenkt. Daarachter een beheeromgeving waarin de klant alles zelf aanpast. Alleen gebouwd en onderhouden bij ConnectNow, van architectuur tot deployment.',
+    oneliner: 'Een wijnwebshop die de klant volledig zelf beheert, op een backend die ook een tweede merk draagt.',
+    fiche: [
+      { k: 'Rol', v: 'Full-stack, alleen' },
+      { k: 'Periode', v: '2023 — nu' },
+      { k: 'Status', v: 'Live · Decades in opbouw' },
+      { k: 'Stack', v: 'Next.js · Express · Prisma · MySQL · Azure Blob' },
+    ],
+    live: { label: 'wildwines.be', href: 'https://www.wildwines.be' },
+    probleem: 'WildWines wilde online wijn verkopen en proeverijen aanbieden, zonder voor elke nieuwe wijn, druif of formule een developer te moeten bellen. En er kwam een tweede merk aan, Decades, dat niet opnieuw van nul mocht beginnen.',
+    deed: [
+      'De webshop: wijnen zoeken en kopen, per wijn een detailpagina met druiven en reviews, en een pagina met voedselcombinaties die toont welke wijn bij welk gerecht past. Daarnaast een pagina om een proeverij aan te vragen op basis van vaste formules, en een Over ons- en contactpagina. Afrekenen loopt via kmoshops, en de knop toont zelf wanneer een wijn uitverkocht is.',
+      'De beheeromgeving: wijnen, druiven, voedselcombinaties, proeverijformules, verpakkingen, events, reviews en gebruikers beheert de klant allemaal zelf. Foto\'s gaan naar Azure Blob. Eén API en één beheeromgeving voor beide merken. Decades krijgt een eigen frontend, maar deelt alles wat erachter zit.',
+      'Als extra een proeverijmodule voor events met meer dan honderd wijnen van verschillende handelaars. Bezoekers bestellen zelf op hun gsm en krijgen een ticketcode. Aan de kassa wordt enkel nog afgerekend, en de voorraad gaat in één transactie omlaag.',
+    ],
+    // These phone shots are taller than the others, so the case sets its own ratio.
+    phoneRatio: '360 / 704',
+    stills: [
+      { kind: 'desktop', src: '/images/wildwines/hero_desktop.png', alt: 'Homepagina van Wild Wines: een wijngaard met de titel Welcome to Wild Wines, dé webshop voor Noord-Amerikaanse wijnen.' },
+      { kind: 'desktop', src: '/images/wildwines/wineshop_desktop.png', alt: 'De shop met filters op type wijn, druivensoort, jaar en prijs, en wijnkaarten met prijs en jaargang.' },
+      { kind: 'desktop', src: '/images/wildwines/foodpairing_desktop.png', alt: 'Eten en wijncombinaties: gerechten met de passende wijn en een recept om te downloaden als pdf.' },
+      { kind: 'phone', src: '/images/wildwines/hero_phone.jpeg', alt: 'Gsm: de homepagina van Wild Wines.' },
+      { kind: 'phone', src: '/images/wildwines/wineshop_phone.jpeg', alt: 'Gsm: de shop met een wijnkaart en de filterknop.' },
+      { kind: 'phone', src: '/images/wildwines/foodpairing_phone.jpeg', alt: 'Gsm: een gerecht met de bijpassende wijn.' },
+      { kind: 'phone', src: '/images/wildwines/proeverij_phone.jpeg', alt: 'Gsm: de proeverijmodule, stap 1 van 3, waar je je gegevens invult voor je ticket.' },
+    ],
+    resultaat: 'WildWines verkoopt online en past zijn aanbod zelf aan, van een nieuwe wijn tot een nieuwe proeverijformule. Een tweede merk vraagt geen tweede backend. En op proeverijen gebeurt het bestellen nu vóór de kassa in plaats van eraan.',
+    cijfers: [
+      { v: '02', k: 'Merken, één backend' },
+      { v: '05', k: 'Publieke pagina\'s' },
+      { v: '08', k: 'Onderdelen in het beheer' },
+    ],
+  },
+  {
+    slug: 'deflosj',
+    moment: 'bracket',
+    num: '02',
+    app: 'De Flosj',
+    title: 'De Flosj',
+    momentTitle: 'Toernooiportaal',
+    year: '2026',
+    icon: 'DF',
+    color: '#ff5d92',
+    tint: '#ffe1ec',
+    meta: 'VZW Rotselaar · 2026 — nu',
+    line: 'Het platform achter de evenementen van VZW Rotselaar.',
+    lightbox: 'Een eigen toernooiplatform voor 48 petanqueploegen: poules, standen en KO-schema live op elke gsm, en een teamportaal zonder account.',
+    oneliner: 'Het platform dat de WordPress-site van een vzw vervangt: inschrijvingen, beheer en een toernooiplatform voor 48 ploegen.',
+    fiche: [
+      { k: 'Rol', v: 'Full-stack, alleen' },
+      { k: 'Periode', v: 'Apr 2026 — nu' },
+      { k: 'Status', v: 'Live, in uitbreiding' },
+      { k: 'Stack', v: 'Next.js · Express · Prisma · PostgreSQL · Railway' },
+    ],
+    live: { label: 'deflosj.be', href: 'https://deflosj.be' },
+    probleem: 'Een vzw van vrijwilligers met vijf evenementen per jaar, van de Dorpelingenkoers tot een petanquetoernooi met 48 ploegen. De WordPress-site kon de inschrijvingen en het toernooi niet aan, en niemand in de vereniging kon hem nog aanpassen. Op de toernooidag zelf moet alles werken vanaf een gsm, met honderden spelers en supporters tegelijk op de site.',
+    deed: [
+      'Eén platform met een publieke site, een beheeromgeving en een apart toernooiplatform, met vijf rollen van lid tot superadmin.',
+      'Het toernooi loopt van begin tot eind in de app: aanmelden aan de toog in een paar seconden per ploeg, poules en wedstrijden genereren, en KO-winnaars die automatisch doorschuiven in het schema. Een verbeterde score past de bracket meteen mee aan.',
+      'Elke ploeg krijgt een eigen portaallink als QR-code. Spelers passen hun ploeg aan en volgen hun wedstrijden zonder account of wachtwoord.',
+      'Inschrijvingen bevatten gevoelige gegevens. Refresh tokens worden gehasht bewaard in een httpOnly-cookie met CSRF-bescherming, en tokens en e-mailadressen van ploegen komen nooit in de publieke API terecht.',
+    ],
+    stills: [
+      
+    ],
+    resultaat: [
+      'De WordPress-site is weg: de vzw draait volledig op eigen code, op een eigen domein, voor een fractie van de kosten.',
+      'Het toernooi, de inschrijvingen en het beheer zitten op hetzelfde platform, en de vrijwilligers beheren het zelf.',
+    ],
+    cijfers: [
+      { v: '48', k: 'Ploegen in het toernooi' },
+      { v: '05', k: 'Rollen met eigen rechten' },
+      { v: '11', k: 'Beheermodules' },
+    ],
+  },
+  {
+    slug: 'insight2impact',
+    moment: 'track',
+    num: '03',
+    app: 'insight2impact',
+    title: 'insight2impact',
+    momentTitle: 'Trajectkeuze',
+    year: '2026',
+    icon: 'i2',
+    color: '#4b5548',
+    tint: '#efe9dc', 
+    meta: 'Klant',
+    line: 'Een drietalige site voor een coachingpraktijk, met een eigen editor voor de klant.',
+    lightbox: 'Een site in het Nederlands, Frans en Engels, opgebouwd rond de twee trajecten van de praktijk. De coach past zijn teksten zelf aan door erop te klikken.',
+    oneliner: 'Een drietalige site voor een business coach, opgebouwd rond twee trajecten en zelf aan te passen via een visuele editor.',
+    fiche: [
+      { k: 'Rol', v: 'Design & development' },
+      { k: 'Talen', v: 'NL · FR · EN' },
+      { k: 'Stack', v: 'Next.js · static export · PHP' },
+    ],
+    live: { label: 'insight2impact.be', href: 'https://insight2impact.be' },
+    probleem: 'Een business coach en sales trainer met twee doelgroepen: organisaties die hun commerciële team willen laten groeien, en mensen die voor zichzelf een traject zoeken. De site moest beide meteen de juiste weg tonen, in drie talen. En de coach moest zijn teksten zelf kunnen bijwerken, zonder telkens bij mij aan te kloppen.',
+    deed: [
+      'De twee trajecten, Commercieel en Individueel, werden het centrale beeld van de site: elk met een eigen aanpak, werkvormen en onderwerpen, en telkens dezelfde weg naar een eerste gesprek. Alles in het Nederlands, Frans en Engels, met een eigen route per taal en een doorverwijzing op basis van je browsertaal.',
+      'Voor de teksten bouwde ik een kleine visuele editor. De coach ziet zijn echte site, klikt op een tekst en past die aan met een live preview, op computer, tablet of gsm en in elke taal. Publiceren maakt een commit en de site bouwt zichzelf opnieuw.',
+      'De hosting kon geen Node-server draaien, dus wordt de site statisch geëxporteerd. GitHub Actions bouwt hem bij elke wijziging, en het contactformulier en de editor draaien op de PHP die er al stond.',
+    ],
+    // kind: 'desktop' shots become a slider; 'phone' shots sit side by side.
+    // focus: which part of a tall phone shot stays visible (CSS object-position).
+    stills: [
+      { kind: 'desktop', src: '/images/insight2impact/hero.png', alt: 'Homepagina van insight2impact met het model Inzicht, Beweging, Verankering, Impact.' },
+      { kind: 'desktop', src: '/images/insight2impact/mijn_aanpak.png', alt: 'De twee trajecten naast elkaar: Commercieel en Individueel, elk met hoe het verloopt en voorbeelden van onderwerpen.' },
+      { kind: 'desktop', src: '/images/insight2impact/cms.png', alt: 'De visuele editor: de echte site met een zijpaneel om teksten aan te passen, per taal en per schermgrootte.' },
+      { kind: 'phone', src: '/images/insight2impact/hero_phone.jpeg', alt: 'Gsm: de Engelse homepagina.' },
+      { kind: 'phone', src: '/images/insight2impact/mijn_aanpak_comercieel_phone.jpeg', alt: 'Gsm: het commerciële traject in het Engels.' },
+      { kind: 'phone', src: '/images/insight2impact/mijn_aanpak_indivudeel_phone.jpeg', alt: 'Gsm: het individuele traject in het Engels.', focus: 'center 57%' },
+      { kind: 'phone', src: '/images/insight2impact/wie_ben_ik_phone.jpeg', alt: 'Gsm: de pagina over de coach, met zijn vier waarden.' },
+    ],
+    resultaat: 'Sinds de editor live staat, werkt de coach zijn site zelf bij. In de eerste week publiceerde hij al zestien tekstwijzigingen, zonder één mail naar mij.',
+    cijfers: [
+      { v: '03', k: 'Talen' },
+      { v: '02', k: 'Trajecten' },
+      { v: '16', k: 'Wijzigingen door de klant zelf' },
+    ],
+  },
+]
