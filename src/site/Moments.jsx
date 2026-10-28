@@ -67,7 +67,85 @@ function TrackMoment() {
   )
 }
 
-const MOMENTS = { order: OrderMoment, bracket: BracketMoment, track: TrackMoment }
+// Shussapp: tap the winning duo, count a Mama, save, then climb from #3 to #2.
+// Caps use the same 21-tooth crown silhouette as the avatars in the app.
+const CAP_CLIP = (() => {
+  const teeth = 21
+  const steps = teeth * 8
+  const pts = []
+  for (let i = 0; i < steps; i++) {
+    const a = (i / steps) * Math.PI * 2
+    const r = 50 * (1 - 0.07 * (1 - (1 + Math.cos(a * teeth)) / 2))
+    pts.push(`${(50 + r * Math.sin(a)).toFixed(2)}% ${(50 - r * Math.cos(a)).toFixed(2)}%`)
+  }
+  return `polygon(${pts.join(',')})`
+})()
+
+function Cap({ c, children }) {
+  return <span className={`sh-cap sh-cap--${c}`} style={{ clipPath: CAP_CLIP }}><span>{children}</span></span>
+}
+
+// Split-flap number: every digit column rolls from its old to its new value, staggered.
+function Flap({ from, to, anim }) {
+  return (
+    <span className="sh-flap">
+      {[...to].map((d, i) => (
+        <span key={i} className="sh-flap__col">
+          <span className={anim} style={{ animationDelay: `${i * 0.07}s` }}><span>{from[i]}</span><span>{d}</span></span>
+        </span>
+      ))}
+    </span>
+  )
+}
+
+function ShussMoment() {
+  return (
+    <div className="sh">
+      <div className="sh-screen a-shA">
+        <span className="sh-kicker">Potje · 4-mat</span>
+        <span className="sh-title">Wie won?</span>
+        <div className="sh-duo a-duo1">
+          <span className="sh-caps"><Cap c="gold">J</Cap><Cap c="mint">T</Cap></span>
+          <span className="sh-duo__name">Jij &amp; Tibo</span>
+          <span className="sh-place a-place1">1e</span>
+        </div>
+        <div className="sh-duo a-duo2">
+          <span className="sh-caps"><Cap c="red">L</Cap><Cap c="cream">B</Cap></span>
+          <span className="sh-duo__name">Lars &amp; Bo</span>
+          <span className="sh-place sh-place--2 a-place2">2e</span>
+        </div>
+        <div className="sh-mama">
+          <span>Mama’s</span>
+          <span className="sh-count a-bumpM"><Flap from="0" to="1" anim="a-flapM" /></span>
+        </div>
+        <div className="sh-cta a-shPress">Opslaan</div>
+      </div>
+
+      <div className="sh-screen sh-screen--b a-shB">
+        <span className="sh-kicker">Crew · De Kelder</span>
+        <div className="sh-rank">
+          <span className="sh-rank__n">#<Flap from="3" to="2" anim="a-flapR" /></span>
+          <span className="sh-elo">
+            <span className="sh-delta a-delta">+17</span>
+            <Flap from="1284" to="1301" anim="a-flapR" />
+          </span>
+        </div>
+        <span className="sh-label">Vorm</span>
+        <div className="sh-form">
+          <div className="a-form">{[1, 0, 1, 1, 0, 1].map((w, i) => <i key={i} className={w ? 'w' : undefined} />)}</div>
+        </div>
+        <div className="sh-board">
+          {[1, 2, 3].map((n) => <span key={n} className="sh-board__n" style={{ top: (n - 1) * 24 }}>{n}</span>)}
+          <div className="sh-row" style={{ top: 0 }}><span>Lars</span><span>1322</span></div>
+          <div className="sh-row a-rowDown" style={{ top: 24 }}><span>Bo</span><span>1290</span></div>
+          <div className="sh-row sh-row--me a-rowUp" style={{ top: 48 }}><span>Jij</span><Flap from="1284" to="1301" anim="a-flapR" /></div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const MOMENTS = { order: OrderMoment, bracket: BracketMoment, track: TrackMoment, shuss: ShussMoment }
 
 // The coloured stage with the phone in it. `size` is 'tile' | 'lightbox' | 'hero'.
 export function Stage({ kase, size = 'tile' }) {
@@ -82,5 +160,9 @@ export function Stage({ kase, size = 'tile' }) {
 }
 
 export function AppIcon({ kase }) {
-  return <span className="app-icon" style={{ background: kase.color }} aria-hidden="true">{kase.icon}</span>
+  return (
+    <span className="app-icon" style={{ background: kase.color }} aria-hidden="true">
+      {kase.iconSrc ? <img src={kase.iconSrc} alt="" /> : kase.icon}
+    </span>
+  )
 }

@@ -260,3 +260,79 @@ button { font: inherit; color: inherit; }
   .reveal { opacity: 1; transform: none; }
   .a-fadeB { opacity: 0; }
 }
+
+/* ---------- Shussapp moment (dark scoreboard, mirrors the app's own tokens) ---------- */
+.sh { --bc: 'Barlow Condensed', var(--sans); --amber: #ffb627; --red: #ff6b5b; --mint: #7fe0a8; --cream: #f3f1ea; --card: #15191a; --chip: #2a3033;
+  position: absolute; inset: 0; background: #0b0d0c; color: var(--cream); font-family: var(--bc); font-variant-numeric: tabular-nums; }
+.sh-screen { position: absolute; inset: 0; padding: 22px 14px; display: flex; flex-direction: column; gap: 7px; }
+.sh-screen--b { opacity: 0; gap: 8px; }
+.sh-kicker { font-weight: 700; font-size: 9px; line-height: 1; letter-spacing: .16em; text-transform: uppercase; color: var(--amber); }
+.sh-title { font-weight: 800; font-size: 27px; line-height: .9; text-transform: uppercase; margin-bottom: 3px; }
+.sh-duo { display: flex; align-items: center; gap: 8px; padding: 7px 8px; border-radius: 10px; background: var(--card); border: 1.5px solid rgba(255,255,255,.08); }
+.sh-duo__name { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: 600; font-size: 13px; line-height: 1.1; }
+.sh-caps { display: flex; }
+.sh-caps .sh-cap + .sh-cap { margin-left: -6px; }
+.sh-cap { width: 22px; height: 22px; display: grid; place-items: center; flex: none;
+  background: radial-gradient(circle at 32% 24%, rgba(255,255,255,.32), rgba(255,255,255,0) 55%), radial-gradient(circle at 68% 80%, rgba(0,0,0,.28), rgba(0,0,0,0) 55%),
+    repeating-conic-gradient(from -8.571deg, color-mix(in srgb, var(--d), #000 26%) 0deg, var(--d) 3.2deg, var(--l) 7.6deg, color-mix(in srgb, var(--l), #fff 34%) 8.57deg, var(--l) 9.6deg, var(--d) 13.9deg, color-mix(in srgb, var(--d), #000 26%) 17.143deg); }
+.sh-cap > span { width: 15px; height: 15px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 8px; color: var(--ink);
+  background: linear-gradient(158deg, rgba(255,255,255,.34), rgba(255,255,255,.04) 40%, rgba(0,0,0,.16) 100%), var(--f); }
+.sh-cap--gold { --l: #F4D488; --d: #A3781A; --ink: #3A2A05; --f: radial-gradient(circle at 34% 26%, #ffeeb8, #d8a72c 46%, #8f6b14 100%); }
+.sh-cap--red { --l: #E6A4A0; --d: #8D3A34; --ink: #2B0D0A; --f: radial-gradient(circle at 34% 26%, #ffd6d2, #c8544b 46%, #7d2a24 100%); }
+.sh-cap--cream { --l: #DFE3DC; --d: #7C857C; --ink: #2B302C; --f: radial-gradient(circle at 34% 26%, #ffffff, #c3c9c1 46%, #79817a 100%); }
+.sh-cap--mint { --l: #A8D2B7; --d: #3C6B4D; --ink: #0C1F14; --f: radial-gradient(circle at 34% 26%, #d9f3e2, #5a9a70 46%, #2e5a3f 100%); }
+.sh-place { width: 20px; height: 20px; border-radius: 6px; display: grid; place-items: center; background: var(--amber); color: #111; font-weight: 800; font-size: 10px; transform: scale(0); }
+.sh-place--2 { background: var(--chip); color: var(--cream); }
+.sh-mama { display: flex; justify-content: space-between; align-items: center; padding: 6px 8px; border-radius: 10px; background: var(--card);
+  font-weight: 700; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #9aa19c; }
+.sh-count { min-width: 28px; height: 22px; border-radius: 99px; background: var(--red); color: #111; font-weight: 800; font-size: 15px; display: grid; place-items: center; }
+.sh-cta { margin-top: 3px; height: 34px; border-radius: 8px; background: var(--amber); color: #111; display: grid; place-items: center;
+  font-weight: 800; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; }
+.sh-flap { display: inline-flex; }
+.sh-flap__col { display: inline-block; height: 1em; line-height: 1; overflow: hidden; }
+.sh-flap__col > span { display: block; }
+.sh-flap__col > span > span { display: block; height: 1em; }
+.sh-rank { display: flex; justify-content: space-between; align-items: flex-end; background: var(--card); border-radius: 12px; padding: 10px 10px 9px; }
+.sh-rank__n { display: inline-flex; font-weight: 800; font-size: 46px; line-height: 1; color: var(--amber); }
+.sh-elo { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; font-weight: 700; font-size: 22px; line-height: 1; }
+.sh-delta { font-weight: 700; font-size: 10px; line-height: 1; padding: 2px 4px; border-radius: 4px; background: var(--mint); color: #0c1f14; opacity: 0; }
+.sh-label { font-weight: 700; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: #9aa19c; margin-top: 2px; }
+.sh-form { width: 150px; overflow: hidden; }
+.sh-form > div { display: flex; gap: 5px; }
+.sh-form i { flex: 0 0 26px; height: 20px; border-radius: 5px; background: var(--chip); }
+.sh-form i.w { background: var(--amber); }
+.sh-board { position: relative; height: 68px; margin-top: 4px; }
+.sh-board__n { position: absolute; left: 0; width: 10px; height: 20px; line-height: 20px; font-weight: 700; font-size: 11px; color: #9aa19c; }
+.sh-row { position: absolute; left: 14px; right: 0; height: 20px; padding: 0 8px; border-radius: 6px; background: var(--card);
+  display: flex; justify-content: space-between; align-items: center; font-weight: 600; font-size: 12px; line-height: 1; }
+.sh-row--me { background: #1d2224; color: var(--amber); box-shadow: inset 0 0 0 1px rgba(255,182,39,.55); }
+
+@keyframes shA { 0%, 44% { opacity: 1; transform: none; } 50%, 94% { opacity: 0; transform: translateY(-14px); } 100% { opacity: 1; transform: none; } }
+@keyframes shB { 0%, 46% { opacity: 0; transform: translateY(18px); } 52%, 93% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; transform: translateY(18px); } }
+@keyframes duo { 0%, 11% { border-color: rgba(255,255,255,.08); background: #15191a; } 14%, 90% { border-color: #ffb627; background: #1d2224; } 92%, 100% { border-color: rgba(255,255,255,.08); background: #15191a; } }
+@keyframes duo2 { 0%, 19% { border-color: rgba(255,255,255,.08); } 22%, 90% { border-color: rgba(255,255,255,.22); } 92%, 100% { border-color: rgba(255,255,255,.08); } }
+@keyframes place1 { 0%, 11% { transform: scale(0); } 14% { transform: scale(1.25); } 17%, 90% { transform: scale(1); } 92%, 100% { transform: scale(0); } }
+@keyframes place2 { 0%, 19% { transform: scale(0); } 22% { transform: scale(1.25); } 25%, 90% { transform: scale(1); } 92%, 100% { transform: scale(0); } }
+@keyframes flapM { 0%, 27% { transform: translateY(0); } 31%, 90% { transform: translateY(-50%); } 92%, 100% { transform: translateY(0); } }
+@keyframes bumpM { 0%, 27% { transform: scale(1); } 31% { transform: scale(1.25); } 35%, 100% { transform: scale(1); } }
+@keyframes shPress { 0%, 37% { transform: scale(1); } 40% { transform: scale(.94); } 43%, 100% { transform: scale(1); } }
+@keyframes flapR { 0%, 56% { transform: translateY(0); } 60%, 98% { transform: translateY(-50%); } 100% { transform: translateY(0); } }
+@keyframes delta { 0%, 61% { opacity: 0; transform: translateY(4px); } 65%, 94% { opacity: 1; transform: none; } 98%, 100% { opacity: 0; } }
+@keyframes form { 0%, 63% { transform: translateX(0); } 69%, 98% { transform: translateX(-31px); } 100% { transform: translateX(0); } }
+@keyframes rowUp { 0%, 66% { transform: translateY(0); } 72%, 98% { transform: translateY(-24px); } 100% { transform: translateY(0); } }
+@keyframes rowDown { 0%, 66% { transform: translateY(0); } 72%, 98% { transform: translateY(24px); } 100% { transform: translateY(0); } }
+.a-shA { animation: shA 7.2s cubic-bezier(.5, 0, .2, 1) infinite; }
+.a-shB { animation: shB 7.2s cubic-bezier(.5, 0, .2, 1) infinite; }
+.a-duo1 { animation: duo 7.2s ease infinite; }
+.a-duo2 { animation: duo2 7.2s ease infinite; }
+.a-place1 { animation: place1 7.2s ease infinite; }
+.a-place2 { animation: place2 7.2s ease infinite; }
+.a-flapM { animation: flapM 7.2s cubic-bezier(.7, 0, .2, 1) infinite; }
+.a-bumpM { animation: bumpM 7.2s ease infinite; }
+.a-shPress { animation: shPress 7.2s ease infinite; }
+.a-flapR { animation: flapR 7.2s cubic-bezier(.7, 0, .2, 1) infinite; }
+.a-delta { animation: delta 7.2s ease infinite; }
+.a-form { animation: form 7.2s cubic-bezier(.6, 0, .2, 1) infinite; }
+.a-rowUp { animation: rowUp 7.2s cubic-bezier(.6, 0, .2, 1) infinite; }
+.a-rowDown { animation: rowDown 7.2s cubic-bezier(.6, 0, .2, 1) infinite; }
+.app-icon img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
